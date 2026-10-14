@@ -1,0 +1,18 @@
+SELECT * FROM EMPRESAS_USUARIAS
+
+SP_HELP EMPRESAS_USUARIAS
+
+SELECT 
+	emp.EMPRESA_USUARIA AS empresa,
+	emp.NOME AS nome_empresa
+FROM
+	EMPRESAS_USUARIAS emp
+
+-- Desafio
+SELECT
+	ent.ENTIDADE AS cod_do_cliente,
+	ent.NOME AS nome,
+	ent.INSCRICAO_FEDERAL AS cpf_cnpj,
+	ent.ATIVO AS cadastro_ativo
+FROM
+	ENTIDADES ent
