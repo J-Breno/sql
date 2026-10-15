@@ -1,0 +1,34 @@
+/*
+YEAR
+MONTH
+DAY
+DATEPART
+
+year
+month
+dayofyear
+day
+week
+weekday
+hour
+minute
+second
+
+DATEADD - adiciona ou subtrai datas
+DATEDIFF - faz diferença entre datas
+EOMONTH - pega o ultimo dia do mês
+*/
+
+SELECT GETDATE() AS DATA_HORA_ATUAL, YEAR(GETDATE()) AS ANO, MONTH(GETDATE()) AS MES, DAY(GETDATE()) AS DIA, DATEPART(year, GETDATE()), DATEPART(hour, GETDATE()), DATEPART(minute, GETDATE()), DATEADD(year, 1,GETDATE())
+
+SELECT NOME,
+	DATA_CADASTRO,
+	YEAR(DATA_CADASTRO),
+	MONTH(DATA_CADASTRO),
+	DAY(DATA_CADASTRO),
+	CONCAT(DATEDIFF(year, DATA_CADASTRO, GETDATE()), ' anos') AS DIFERENCA_EM_ANOS,
+	EOMONTH(DATA_CADASTRO) AS ULTIMO_DIA_MES
+FROM ENTIDADES
+
+
+
