@@ -1,0 +1,16 @@
+IF OBJECT_ID('ST_PRODUTOS') IS NULL
+BEGIN
+
+	CREATE TABLE ST_PRODUTOS
+	(
+	  COD_PRODUTO          NUMERIC(15)
+	, DESCRICAO            VARCHAR(100)
+	, DESCRICAO_REDUZIDA   VARCHAR(60)
+	, FAMILIA              VARCHAR(80)
+	, SECAO                VARCHAR(80)
+	, GRUPO                VARCHAR(80)
+	, SUB_GRUPO            VARCHAR(80)
+	, MARCA                VARCHAR(80)
+	)
+
+END
