@@ -1,7 +1,15 @@
 CREATE PROCEDURE USP_ST_CARGA_VENDA( @INCREMENTAL BIT )
 
+/*
+@INCREMENTAL = 0 --CARGA FULL
+@INCREMENTAL = 1 --CARGA INCREMENTAL
+*/
 
 AS
+
+-----------------------------
+--VERIFICA SE O SCHEMA EXISTE
+-----------------------------
 
 IF OBJECT_ID('ST_VENDAS') IS NULL
 BEGIN
@@ -22,7 +30,15 @@ BEGIN
 
 END
 
+------------------
+--LIMPA STAGE AREA
+------------------
+
 TRUNCATE TABLE ST_VENDAS
+
+--------------------
+--POPULA STAGE AREA
+--------------------
 
 INSERT INTO ST_VENDAS
 (
